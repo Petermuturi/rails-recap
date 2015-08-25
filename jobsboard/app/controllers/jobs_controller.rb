@@ -3,7 +3,7 @@ class JobsController < ApplicationController
   end
 
   def new
-  	 @job = Job.new
+  	@job = Job.new(params.require(:job).permit(:title, :company, :url))
   end
 
   def create
